@@ -1,0 +1,6 @@
+{
+  "api_key": "your-api-key",
+  "cities": ["Moscow", "Sochi", "Saint Petersburg"],
+  "time": 1,
+  "count_days": 4
+}
