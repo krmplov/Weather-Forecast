@@ -34,43 +34,43 @@ private:
     ftxui::Element LineNight(int i, nlohmann::json weather_city);
 };
 
-class Paint { // FIXME Use an object that creates complete block to render?
+class Paint {
 public:
-    friend class Interface; // FIXME why?
+    friend class Interface;
 private:
     enum class WeatherCode {
-        kClearSky, // 0 Чистое небо +
-        kMainlyClear, // 1 Преимущественно ясно +
-        kPartlyCloudy, // 2 Переменная облачность +
-        kOvercast, // 3 Пасмурно +
-        kFog, // 45 Туман +
-        kDepositingRimeFog, // 48 Отложение инейного тумана +
-        kLightDrizzle, // 51 Слабая морось +
-        kModerateDrizzle, // 53 Умеренная морось +
-        kIntensityDrizzle, // 55 Интенсивная морось +
-        kLightFreezingDrizzle, // 56 Легкий морозный дождь +
-        kIntensityFreezingDrizzle, // 57 Плотный морозный дождь +
-        kSlightRain, // 61  Слабый дождь +
-        kModerateRain, // 63 Умеренный дождь +
-        kIntensityRain, // 65 Сильный дождь +
-        kFreezingLightRain, // 66 Легкий ледяной дождь +
-        kFreezingIntensityRain, // 67 Интенсивный ледяной дождь +
-        kSlightSnow, // 71 Слабый снегопад +
-        kModerateSnow, // 73 Умеренный снегопад +
-        kIntensitySnow, // 75 Сильный снегопад +
-        kSnowGrains, // 77 Снежные зерна +
-        kSlightRainShowers, // 80 Слабый ливень +
-        kModerateRainShowers, // 81 Умеренный ливень +
-        kViolentRainShowers, // 82 Сильный ливень +
-        kSlightSnowShowers, // 85 Слабые снежные ливни +
-        kHeavySnowShowers, // 86 Сильные снежные ливни +
-        kThunderstorm, // 95 Гроза +
+        kClearSky, // 0 Чистое небо
+        kMainlyClear, // 1 Преимущественно ясно
+        kPartlyCloudy, // 2 Переменная облачность
+        kOvercast, // 3 Пасмурно
+        kFog, // 45 Туман
+        kDepositingRimeFog, // 48 Отложение инейного тумана
+        kLightDrizzle, // 51 Слабая морось
+        kModerateDrizzle, // 53 Умеренная морось
+        kIntensityDrizzle, // 55 Интенсивная морось
+        kLightFreezingDrizzle, // 56 Легкий морозный дождь
+        kIntensityFreezingDrizzle, // 57 Плотный морозный дождь
+        kSlightRain, // 61  Слабый дождь
+        kModerateRain, // 63 Умеренный дождь
+        kIntensityRain, // 65 Сильный дождь
+        kFreezingLightRain, // 66 Легкий ледяной дождь
+        kFreezingIntensityRain, // 67 Интенсивный ледяной дождь
+        kSlightSnow, // 71 Слабый снегопад
+        kModerateSnow, // 73 Умеренный снегопад
+        kIntensitySnow, // 75 Сильный снегопад
+        kSnowGrains, // 77 Снежные зерна
+        kSlightRainShowers, // 80 Слабый ливень
+        kModerateRainShowers, // 81 Умеренный ливень
+        kViolentRainShowers, // 82 Сильный ливень
+        kSlightSnowShowers, // 85 Слабые снежные ливни
+        kHeavySnowShowers, // 86 Сильные снежные ливни
+        kThunderstorm, // 95 Гроза
         kThunderstormWithSlightHail, // 96 Гроза с небольшим градом
         kThunderstormWithHeavyHail, // 99 Гроза с сильным градом
     };
 
     static const WeatherCode GetWeatherCode(int code);
-    static const std::string GetWeatherName(const WeatherCode& weather_code); // FIXME map::operator[] ?
+    static const std::string GetWeatherName(const WeatherCode& weather_code);
     static ftxui::Element GetWeatherImage(const WeatherCode& weather_code);
     static std::string GetMonth(const int num);
     static std::string DateParsing(std::string data);
